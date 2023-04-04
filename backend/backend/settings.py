@@ -30,6 +30,8 @@ from google.cloud import storage
 
 import os
 
+import dj_database_url
+
 ALLOWED_HOSTS = ["*"]
 # JWT Settings
 
@@ -89,6 +91,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 if 'HEROKU' in os.environ:
+    db_from_env = dj_database_url.config(conn_max_age=600)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -100,6 +103,7 @@ if 'HEROKU' in os.environ:
 
         }
     }
+    DATABASES['default'].update(db_from_env)
 else:
     DATABASES = {
         'default': {
