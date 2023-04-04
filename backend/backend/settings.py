@@ -88,12 +88,30 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if os.getcwd() == '/app':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': "/cloudsql/ecommerce-platform-326117:us-central1:ecommerce-platform",
+            'USER': 'postgres-ecommerce',
+            'NAME': 'ecommerce_platform',
+            'PASSWORD': 'jehzum-xiqsoD-ryxgy9',
+            'PORT': 5432
+
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': "127.0.0.1",
+            'USER': 'postgres-ecommerce',
+            'NAME': 'ecommerce_platform',
+            'PASSWORD': 'jehzum-xiqsoD-ryxgy9',
+            'PORT': 5432
+
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -147,7 +165,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     BASE_DIR / "frontend/build/static",
 ]
-
 
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     'optical-carrier-382621-4957002feed5.json'
