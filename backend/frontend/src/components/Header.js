@@ -14,6 +14,10 @@ function Header() {
         dispatch(logout())
     }
 
+    const cart = useSelector(state => state.cart)
+
+    const {cartItems} = cart
+
 
     return (
         <header>
@@ -28,7 +32,7 @@ function Header() {
                         <Container fluid>
                             <Nav className="justify-content-end">
                                 <LinkContainer to='/cart'>
-                                    <Nav.Link><i className="fas fa-shopping-cart"></i>Cart</Nav.Link>
+                                    <Nav.Link><i className="fas fa-shopping-cart"></i>Cart ({cartItems.length})</Nav.Link>
                                 </LinkContainer>
                                 {userInfo ? (
                                     <NavDropdown title={userInfo.name} id='username'>

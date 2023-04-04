@@ -107,13 +107,9 @@ if 'HEROKU' in os.environ:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'HOST': "127.0.0.1",
-            'USER': 'postgres-ecommerce',
-            'NAME': 'ecommerce_platform',
-            'PASSWORD': 'jehzum-xiqsoD-ryxgy9',
-            'PORT': 5432
-
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',  # This is where you put the name of the db file.
+            # If one doesn't exist, it will be created at migration time.
         }
     }
 
