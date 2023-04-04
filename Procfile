@@ -1,1 +1,1 @@
-web: sh -c 'cd ./backend && gunicorn backend.wsgi' --log-file -
+web: sh -c 'cd ./backend && python manage.py makemigrations && python manage.py migrate && gunicorn backend.wsgi' --log-file -
