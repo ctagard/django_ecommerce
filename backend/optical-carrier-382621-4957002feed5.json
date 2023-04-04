@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "optical-carrier-382621",
+  "private_key_id": "4957002feed552018b20dbe191302ee966c14133",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCe5tbYOPgeB5Cb\nzD0YhiurXI1ygi1M9NNM9Q9v+SbfqyLmZ4x1WTnOoscpuIBWhihOC5Zx06pmrz1T\nniOsvxVUZx5uX1gDKNVNGgrwz3DVFMCrsdd0yWK5nLJ9/D02EKnwRpx7EauufqbY\nhrGoTXlW/DucIAgak2wb5Caw6nDMxgAILF+Xp27kunqpIrnx0DzsPvxzT2aWxNK9\nDSrAvgRLWQcWnjZWNN6UjUfZxwlEVJ+pnAbhHJcFE7caTNa7cEbpK5RNkOWMp3Le\nib9f/AnXhucQOmPy2c4TLawHEvYtWSZSkkjUrAdcXcveRameo5/1IwOW0Ala6WmW\niF/r8zqPAgMBAAECggEAOvnqW64pSNv97BVNx8BkjOF5DjsKnTlxA2shI6oRp4pZ\nFbLxCsznC66WxQFZgMOiSfU7DVxGLn50AIj9LKxvOjhbrxNsEyAgqtEzplUXx75A\nFHmZQhtMrR9fkCsCfQKKUEek5HiWg9k2C79SSOkYVBSh+zxYRaTZxzBSu+8HlriA\nb5q2I7LG4lat2N06Zc4sVoo7rsl4LuRu35tOiaE7BayEQecKR0ztb+SyIbuJAyMK\nc5obi3cQgrBR9D+mpayADUZ7zg+jIvjyN2zyi9OeoNxDFLgFdhnynSZVdn3GrQ1Y\nR9L08D/jo1e9ZuTEa65EoFoXCm+qHXC1Jrew2WC4IQKBgQDVP8GtgS7JUSzQf62p\nKtiEyL+6+tZFEYANcs46/qrmdPDT80TGgBB7fuTodPyCRD+m9Xpr+iZW2kQ3QrQS\nEOlZFp12i5y/VE+aotJbwIiV/0m7wa6BXIpXh8RDL6wZAfXSIor9QYkRgWj/AFSt\n88uzfog89CdCSz/pYN5xvNT9BQKBgQC+weaH1njfSA36fYmTQAlV//srfAoWG630\nsTzPHz2hBwkUS/CGoRCCRVUqPXQnnpTkQhS7YrQdSpYHRDxU9xzoPy8sUWN8ntoK\n1OEA76rpi+0kDjrH39zHl+etU6RbehHP/IzdfvZ2ry427VOVqIq2TBlJrpY0146y\n8bVNMFKNgwKBgEKWVfPHksRqBIRWWfOo3VMZHEVWbfHDNSj94EerndG4Ujrci20w\nL/Vf+jpbzT0f8oA/xqpQwgf8v7BBs9iwTyzyUtjhX2CfAvxWOzlLNVshC/UE1Wiv\nbMNIMZCJIkPsyMWE48GQ5SwCLLbzc32d0s2JhSEDW/7nYF2PUeZSAG/BAoGANsUz\nrLLu16U3pkFfO/E5/QBXnJ+rwbdG1igBfrLInjCH8dTwBae/NrgzgMJOVIXa2EME\n8tyfPH3K3+E+tWKSYTirEb14pDJ0BoIi7ILj/tSXTS/svrDPElvSQFjwqvc8oAwy\nYfJvT5py2YCA7EqNMVReOmKvbBKsPULbPINwYIMCgYEAm8ytpM2iqdTX2PEkpUes\nQUoz+k4ey/TB9bt1ameeHttyFr4vIsDMFhJ/hLOfXgJQ7cgd0MYoTlNJu6CXhPJN\niEYfTLQOWY8rBRJiK6aKi7o1uAy6oqe3GlYEDOvN40CqDMx8EwQymia95AWT1d+/\n3WMDPJZau/6RHBtx2eFCqJY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "django-admin@optical-carrier-382621.iam.gserviceaccount.com",
+  "client_id": "112136855007840904232",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/django-admin%40optical-carrier-382621.iam.gserviceaccount.com"
+}

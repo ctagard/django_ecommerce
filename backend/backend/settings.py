@@ -25,9 +25,13 @@ SECRET_KEY = 'django-insecure-y89)3mt9&d-%-08wxkuq36q=pt@=*6a6z9w74=(w3d@63bp)qc
 DEBUG = True
 from datetime import timedelta
 
-ALLOWED_HOSTS = []
-# JWT Settings
+from google.oauth2 import service_account
+from google.cloud import storage
 
+import os
+
+ALLOWED_HOSTS = ["*"]
+# JWT Settings
 
 
 # Application definition
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'storages',
 
     'base.apps.BaseConfig',
 ]
@@ -63,7 +68,9 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'frontend/build')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,7 +123,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
 }
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -131,12 +137,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / "static",
+    BASE_DIR / "frontend/build/static",
 ]
+
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    'optical-carrier-382621-4957002feed5.json'
+)
+
+GS_BUCKET_NAME = 'django-ecommerce-website'
+MEDIA_URL = 'https://storage.googleapis.com/{}/media/'.format(GS_BUCKET_NAME)
+STATIC_URL = '/static/'
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 MEDIA_ROOT = 'static/images'
 
