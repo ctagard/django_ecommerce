@@ -48,7 +48,6 @@ sqlparse
 termcolor
 toml
 urllib3
-virtualen
 Werkzeug
 whitenoise
 wrapt
