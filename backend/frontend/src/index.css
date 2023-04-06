@@ -100,6 +100,20 @@ h3{
     white-space: pre-wrap; /* Make the text wrap in case it's too long */
 }
 
+.card-body {
+    min-height: 13rem; /* Adjust this value according to your needs */
+    display: flex;
+    flex-direction: column;
+}
+
+.out-of-stock {
+    min-height: 3rem; /* Match the height of the quantity and Add to Cart elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
 
 @media (max-width: 900px) {
   .carousel-caption h4 {
