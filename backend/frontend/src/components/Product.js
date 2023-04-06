@@ -59,11 +59,11 @@ function Product({product}) {
                         </Card.Text>
                     </Col>
                     {product.countInStock === 0 ? (
-                        <Col xs={4} md={6} lg={7} className="ml-auto out-of-stock">
+                        <Col xs={6} md={6} lg={7} className="ml-auto out-of-stock">
                             <span className="text-danger">Out of Stock</span>
                         </Col>
                     ) : (
-                        <Col xl={8} lg={7} xs={4} md={6} className="ml-auto">
+                        <Col xl={8} lg={7} xs={6} md={6} className="ml-auto">
                             <Row>
                                 <Col className={"qty-box"}>
                                     <Form.Control
