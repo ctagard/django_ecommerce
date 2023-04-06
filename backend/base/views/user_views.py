@@ -114,3 +114,4 @@ def deleteUser(request, pk):
     user = User.objects.get(id=pk)
     user.delete()
     return Response('User was deleted')
+

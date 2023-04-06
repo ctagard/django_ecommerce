@@ -1,14 +1,11 @@
-import React, {useState, useEffect} from 'react'
-import {Link, useParams, useNavigate} from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {Row, Col, Image, ListGroup, Button, Card, Form} from 'react-bootstrap'
+import {Button, Card, Col, Form, Image, ListGroup, Row} from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import {
-    listProductDetails,
-    createProductReview
-} from '../actions/productActions'
+import {createProductReview, listProductDetails} from '../actions/productActions'
 
 import {PRODUCT_CREATE_REVIEW_RESET} from '../constants/productConstants'
 

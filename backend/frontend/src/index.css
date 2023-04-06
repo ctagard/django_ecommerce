@@ -48,6 +48,59 @@ h3{
 .carousel a {
   margin: 0 auto;
 }
+
+.qty-box {
+    padding-right: 0 !important;
+}
+
+.cart-button {
+    padding-left: 0 !important;
+}
+
+.cart-button .btn.animate {
+    animation: clicked 0.5s ease-out;
+}
+
+.cart-button .btn.animate .fas.fa-shopping-cart {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow-text 0.5s linear infinite;
+}
+
+@keyframes clicked {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rainbow-text {
+    0% {
+        background-image: linear-gradient(270deg, violet, #9f4ddc, #ff00dd, violet);
+        background-position: 0% 50%;
+    }
+    100% {
+        background-image: linear-gradient(270deg, violet, #9f4ddc, #ff00dd, violet);
+        background-position: 100% 50%;
+    }
+}
+
+.cart-button .btn.animate .fas.fa-shopping-cart {
+    background-size: 200% auto;
+}
+
+.card-title {
+    min-height: 3rem; /* Adjust this value according to your needs */
+    white-space: pre-wrap; /* Make the text wrap in case it's too long */
+}
+
+
 @media (max-width: 900px) {
   .carousel-caption h4 {
     font-size: 2.0vw;
@@ -59,3 +112,4 @@ h3{
     font-size: 2vw;
   }
 }
+
