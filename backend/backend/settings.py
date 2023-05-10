@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-X_FRAME_OPTIONS = "SAMEORIGIN"
+X_FRAME_OPTIONS = 'ALLOW-FROM www.coleagard.com/, localhost:3000'
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
