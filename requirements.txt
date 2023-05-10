@@ -51,5 +51,5 @@ urllib3
 Werkzeug
 whitenoise
 wrapt
-google-cloud-storage
 dj_database_url
+boto3
