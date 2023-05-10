@@ -18,6 +18,8 @@ function OrderScreen() {
     const dispatch = useDispatch()
     const [sdkReady, setSdkReady] = useState(false)
 
+    const debug = true
+
     const orderDetails = useSelector(state => state.orderDetails)
     const {order, error, loading} = orderDetails
 
@@ -169,13 +171,14 @@ function OrderScreen() {
                                 </Row>
                             </ListGroup.Item>
 
-                            {!order.isPaid && (
+                            {(!order.isPaid && !debug) ? (
                                 <ListGroup.Item>
                                     <PayPalScriptProvider
                                         options={{"client-id": "AUecS9NYkOy8YJioLJL3V__EAaZI0R2jNUXcYCnmXrpdnB-fkVuBxqY73A92NzrJ6Mf2aoymr5bBqaMm"}}
                                     >
                                         <PayPalButtons
                                             style={{layout: "vertical"}}
+                                            disabled={false}
                                             createOrder={(data, actions) => {
                                                 return actions.order.create({
                                                     purchase_units: [{
@@ -193,6 +196,10 @@ function OrderScreen() {
                                         />
                                     </PayPalScriptProvider>
                                 < /ListGroup.Item>
+                            ) : (
+                                <ListGroup.Item>
+                                    Paypal buttons go here - but this isn't a real business!
+                                </ListGroup.Item>
                             )}
                         </ListGroup>
                         {loadingDeliver && <Loader/>}

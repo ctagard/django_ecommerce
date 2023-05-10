@@ -24,7 +24,7 @@ function Header() {
             <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
                 <Container fluid>
                     <LinkContainer to='/'>
-                        <Navbar.Brand> ProShop </Navbar.Brand>
+                        <Navbar.Brand> Cole's Ecommerce Shop! </Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
