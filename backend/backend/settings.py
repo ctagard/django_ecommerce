@@ -182,8 +182,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 if os.getcwd() == '/app':
     DEBUG = False
 
-# AKIA57M6LJNBNUM45LN7
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 
-# r9GCTvx2U9OAwt+k0K0zSMlzSjNrAp4ii5mGWAAT
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
