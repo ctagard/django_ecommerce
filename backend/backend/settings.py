@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from datetime import timedelta
+import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,23 +25,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y89)3mt9&d-%-08wxkuq36q=pt@=*6a6z9w74=(w3d@63bp)qc'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-from datetime import timedelta
 
-from google.oauth2 import service_account
-from google.cloud import storage
-
-import os
-
-import dj_database_url
+if os.environ.get("HEROKU") == "true":
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-# JWT Settings
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -95,10 +94,10 @@ if 'HEROKU' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'HOST': "/cloudsql/ecommerce-platform-326117:us-central1:ecommerce-platform",
-            'USER': 'postgres-ecommerce',
-            'NAME': 'ecommerce_platform',
-            'PASSWORD': 'jehzum-xiqsoD-ryxgy9',
+            'HOST': "summy",
+            'USER': 'dsumerydfauser-ecommerce',
+            'NAME': 'ecommerce_placeholder',
+            'PASSWORD': 'try-again-next-time',
             'PORT': 5432
 
         }
@@ -154,11 +153,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-GS_BUCKET_NAME = 'django-ecommerce-website'
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = os.environ.get("AWS_REGION")
+AWS_S3_ADDRESSING_STYLE = "virtual"
 
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-MEDIA_URL = 'https://storage.googleapis.com/{}/media/'.format(GS_BUCKET_NAME)
+MEDIA_URL = '/images/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -166,14 +169,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "frontend/build/static",
 ]
 
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    'optical-carrier-382621-4957002feed5.json'
-)
-
 MEDIA_ROOT = BASE_DIR / 'static/images'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -184,3 +181,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 if os.getcwd() == '/app':
     DEBUG = False
+
+# AKIA57M6LJNBNUM45LN7
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+
+# r9GCTvx2U9OAwt+k0K0zSMlzSjNrAp4ii5mGWAAT
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
